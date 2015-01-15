@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="gabblr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>gabblr</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="deps.css">
+        <script type="text/javascript" src="deps.js"></script>
+        <script type="text/javascript" src="app.js"></script>
+        <script type="text/javascript" src="templates.js"></script>
+    </head>
+
+    <body ng-controller="MainCtrl">
+        <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">Gabblr</a>
+                </div>
+                <ul class="nav navbar-nav navbar-right" ng-hide="window.user">
+                        <li><a href="#signup">Signup</a></li>
+                        <li><a href="#login">Login</a></li>
+                </ul>
+            </div>
+        </nav>
+        alright
+         <div class="ui-view"></div>
+
+        <footer>
+            
+        </footer>
+    </body>
+</html>
+
+<!--      later on           <div class="nav navbar-nav navbar-right" ng-show="window.user">
+                        Hello, {{ $window.user.email }}
+                </div> -->
