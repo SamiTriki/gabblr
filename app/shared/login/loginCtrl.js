@@ -7,6 +7,4 @@ gabblr.controller('LoginCtrl', function ($scope, $auth) {
         password: $scope.password
     };
 
-    $auth.login($scope.user);
-
 });

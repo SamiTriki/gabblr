@@ -15,7 +15,7 @@ gabblr.config(function ($stateProvider, $urlRouterProvider) {
             url: '/signup',
             title: 'Sign Up',
             templateUrl: 'app/shared/signup/signup.html',
-            controller: 'signupCtrl'
+            controller: 'SignupCtrl'
         })
         .state('login', {
             url: '/login',

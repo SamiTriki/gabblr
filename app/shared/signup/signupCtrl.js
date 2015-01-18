@@ -7,10 +7,12 @@ gabblr.controller('SignupCtrl', function ($scope, $auth) {
         password: $scope.password
     };
 
-    $auth.signup($scope.user)
-        .then(function (response) {
-            console.log(response);
-        });
+    $scope.signUp = function () {
 
+        $auth.signup($scope.user)
+            .then(function (response) {
+                console.log(response);
+            });
+    };
 });
 

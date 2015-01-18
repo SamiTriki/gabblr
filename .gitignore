@@ -6,6 +6,6 @@ node_modules
 # Bower Deps
 assets/libs/bower_components
 
-#sami's back end
-api/
+#remove back end when we got the C# running
+#api/
 

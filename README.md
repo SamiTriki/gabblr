@@ -11,7 +11,9 @@ Gabblr uses a number of open source projects to work properly:
 * [AngularJS] - HTML enhanced for web apps!
 * [Twitter Bootstrap] - great UI boilerplate for modern web apps
 * [Gulp] - the streaming build system
+* [Laravel] - The PHP framework for web artisans 
 
+/!\ the back end is located in the "api" folder and is made with laravel, however, the rest of my team will provide a C# based api, the laravel part is just for me <3
 
 ### Todo's
 
@@ -29,3 +31,4 @@ MIT
 [Twitter Bootstrap]:http://twitter.github.com/bootstrap/
 [AngularJS]:http://angularjs.org
 [Gulp]:http://gulpjs.com
+[Laravel]:http://laravel.com
