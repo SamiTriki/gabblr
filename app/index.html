@@ -21,20 +21,18 @@
                     <a class="navbar-brand" href="#">Gabblr</a>
                 </div>
                 <ul class="nav navbar-nav navbar-right" ng-hide="window.user">
-                        <li><a href="#signup">Signup</a></li>
-                        <li><a href="#login">Login</a></li>
+                        <li><a ui-sref="signup">Signup</a></li>
+                        <li><a ui-sref="login">Login</a></li>
                 </ul>
             </div>
         </nav>
-        alright
-         <div class="ui-view"></div>
+        
+        <div ui-view autoscroll="false" class="page-view container-fluid">
+            
+        </div>
 
         <footer>
             
         </footer>
     </body>
 </html>
-
-<!--      later on           <div class="nav navbar-nav navbar-right" ng-show="window.user">
-                        Hello, {{ $window.user.email }}
-                </div> -->
