@@ -48,11 +48,10 @@ class AuthController extends \BaseController {
 
     public function signup()
     {
-        $input['displayName'] = Input::get('displayName');
         $input['email'] = Input::get('email');
         $input['password'] = Input::get('password');
 
-        $rules = array('displayName' => 'required',
+        $rules = array(
                        'email' => 'required|email|unique:users,email',
                        'password' => 'required');
 
@@ -64,7 +63,6 @@ class AuthController extends \BaseController {
         else
         {
             $user = new User;
-            $user->displayName = Input::get('displayName');
             $user->email = Input::get('email');
             $user->password = Hash::make(Input::get('password'));
             $user->save();
