@@ -1,6 +1,6 @@
 var gabblr = angular.module('gabblr');
 
-gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider) {
+gabblr.config(function ($stateProvider, $urlRouterProvider) {
 
     $urlRouterProvider.otherwise('/');
 
