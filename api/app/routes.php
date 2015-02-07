@@ -14,14 +14,14 @@
 Route::get('api/me', array('before' => 'auth', 'uses' => 'UserController@getUser'));
 Route::put('api/me', array('before' => 'auth', 'uses' => 'UserController@updateUser'));
 
-Route::post('auth/login', 'AuthController@login');
-Route::post('auth/signup', 'AuthController@signup');
-Route::post('auth/facebook', 'AuthController@facebook');
-Route::post('auth/foursquare', 'AuthController@foursquare');
-Route::post('auth/github', 'AuthController@github');
-Route::post('auth/google', 'AuthController@google');
-Route::post('auth/linkedin', 'AuthController@linkedin');
-Route::get('auth/twitter', 'AuthController@twitter');
-Route::get('auth/unlink/{provider}', array('before' => 'auth', 'uses' => 'AuthController@unlink'));
+Route::post('api/auth/login', 'AuthController@login');
+Route::post('api/auth/signup', 'AuthController@signup');
+Route::post('api/auth/facebook', 'AuthController@facebook');
+Route::post('api/auth/foursquare', 'AuthController@foursquare');
+Route::post('api/auth/github', 'AuthController@github');
+Route::post('api/auth/google', 'AuthController@google');
+Route::post('api/auth/linkedin', 'AuthController@linkedin');
+Route::get('api/auth/twitter', 'AuthController@twitter');
+Route::get('api/auth/unlink/{provider}', array('before' => 'auth', 'uses' => 'AuthController@unlink'));
 
 Route::get('{angular?}', [ 'uses' => 'HomeController@index' ])->where('angular', '.*');

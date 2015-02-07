@@ -22,6 +22,12 @@ gabblr.config(function ($stateProvider, $urlRouterProvider) {
             title: 'login',
             templateUrl: 'app/shared/login/login.html',
             controller: 'LoginCtrl'
+        })
+        .state('timeline', {
+            url: '/timeline',
+            title: 'Gabblr Timeline',
+            templateUrl: 'app/shared/timeline/timeline.html',
+            controller: 'TimelineCtrl'
         });
 
 });
