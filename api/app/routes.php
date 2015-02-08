@@ -17,4 +17,6 @@ Route::put('api/me', array('before' => 'auth', 'uses' => 'UserController@updateU
 Route::post('api/auth/login', 'AuthController@login');
 Route::post('api/auth/signup', 'AuthController@signup');
 
-Route::get('{angular?}', [ 'uses' => 'HomeController@index' ])->where('angular', '.*');
+Route::get('api/users/{id}', 'UsersController@getUserById');
+
+// Route::get('{angular?}', [ 'uses' => 'HomeController@index' ])->where('angular', '.*');

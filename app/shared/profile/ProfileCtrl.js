@@ -1,12 +1,12 @@
 var gabblr = angular.module('gabblr');
 
-gabblr.controller('ProfileCtrl', function ($scope, User, userManager) {
+gabblr.controller('ProfileCtrl', function ($scope, Me, profileService) {
 
-    $scope.updateUser = function (user) {
-        return userManager.updateUser(user).then(function (res) {
+    $scope.updateMe = function (me) {
+        return profileService.updateUser(me).then(function (res) {
             console.log(res);
         });
     };
-    $scope.user = User;
+    $scope.me = Me;
 });
 

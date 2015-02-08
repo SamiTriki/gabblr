@@ -4,18 +4,18 @@
         <h1 class="col-xs-12">Update your profile</h1>
         
         <div class="col-xs-12 col-sm-8 col-sm-offset-2">
-            <form name="userData">
-                <input type="text" class="form-control" ng-model="user.displayName">
+            <form name="myData">
+                <input type="text" class="form-control" ng-model="me.displayName">
 
-                <img ng-if="user.profile_picture" ng-src="{{user.profile_picture}}" alt="">
+                <img ng-if="me.profile_picture" ng-src="{{me.profile_picture}}" alt="">
                 <label for="">profile picture url</label>
-                <input type="text" class="form-control" ng-model="user.profile_picture">
+                <input type="text" class="form-control" ng-model="me.profile_picture">
 
-                <img ng-if="user.background_picture" ng-src="{{user.background_picture}}" alt="">
+                <img ng-if="me.background_picture" ng-src="{{me.background_picture}}" alt="">
                 <label for="">change background picture url</label>
-                <input type="text" class="form-control" ng-model="user.background_picture">
+                <input type="text" class="form-control" ng-model="me.background_picture">
 
-                <button class="btn btn-primary" ng-click="updateUser(user)">Update</button>
+                <button class="btn btn-primary" ng-click="updateMe(me)">Update</button>
             </form>
         </div>
     </div>

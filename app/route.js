@@ -1,7 +1,8 @@
 var gabblr = angular.module('gabblr');
 
-gabblr.config(function ($stateProvider, $urlRouterProvider) {
+gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $provide) {
 
+    $locationProvider.html5Mode(true);
     $urlRouterProvider.otherwise('/');
 
     $stateProvider
@@ -39,8 +40,20 @@ gabblr.config(function ($stateProvider, $urlRouterProvider) {
 
                     return deferred.promise;
                 },
-                User: function (userManager) {
-                    return userManager.getUser().then(function (data) {
+                Me: function (profileService) {
+                    return profileService.getUser().then(function (data) {
+                        return data.data;
+                    });
+                }
+            }
+        })
+        .state('users', {
+            url: '/{id:int}',
+            templateUrl: 'app/shared/users/user.html',
+            controller: 'UserCtrl',
+            resolve: {
+                user: function (userService, $stateParams) {
+                    return userService.getUserById($stateParams.id).then(function (data) {
                         return data.data;
                     });
                 }
