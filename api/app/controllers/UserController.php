@@ -13,7 +13,9 @@ class UserController extends \BaseController {
         return Response::json(['id'=> $user->id,
                                 'email' => $user->email,
                                 'displayName' => $user->displayName,
-                                'created_ad' => $user->created_at
+                                'created_ad' => $user->created_at,
+                                'profile_picture' => $user->profile_picture,
+                                'background_picture' => $user->background_picture
                             ]);
 	}
 
@@ -26,6 +28,8 @@ class UserController extends \BaseController {
         $user = User::find($payload['sub']);
         $user->displayName = Input::get('displayName', $user->displayName);
         $user->email = Input::get('email', $user->email);
+        $user->profile_picture = Input::get('profile_picture', $user->profile_picture);
+        $user->background_picture = Input::get('background_picture', $user->background_picture);
         $user->save();
 
         $token = $this->createToken($user);

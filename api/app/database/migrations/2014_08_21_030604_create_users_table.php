@@ -18,6 +18,9 @@ class CreateUsersTable extends Migration {
             $table->string('email');
             $table->string('password');
             $table->string('displayName');
+            $table->string('background_picture');
+            $table->string('profile_picture');
+
             $table->timestamps();
         });
 	}
