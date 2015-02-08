@@ -29,18 +29,18 @@ gabblr.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/shared/profile/profile.html',
             controller: 'ProfileCtrl',
             resolve: {
-                authenticated: function($q, $location, $auth) {
-                var deferred = $q.defer();
-                if (!$auth.isAuthenticated()) {
-                    $location.path('/login');
-                } else {
-                    deferred.resolve();
-                }
+                authenticated: function ($q, $location, $auth) {
+                    var deferred = $q.defer();
+                    if (!$auth.isAuthenticated()) {
+                        $location.path('/login');
+                    } else {
+                        deferred.resolve();
+                    }
 
-                return deferred.promise;
+                    return deferred.promise;
                 },
-                User: function(userManager) {
-                    return userManager.getUser().then(function(data){
+                User: function (userManager) {
+                    return userManager.getUser().then(function (data) {
                         return data.data;
                     });
                 }

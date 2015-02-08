@@ -10,7 +10,11 @@ class UserController extends \BaseController {
 
         $user = User::find($payload['sub']);
 
-        return $user;
+        return Response::json(['id'=> $user->id,
+                                'email' => $user->email,
+                                'displayName' => $user->displayName,
+                                'created_ad' => $user->created_at
+                            ]);
 	}
 
 	public function updateUser()
