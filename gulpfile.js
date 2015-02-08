@@ -36,6 +36,7 @@ var jsFiles = [
 
 var cssFiles = [
     'assets/libs/bower_components/bootstrap/dist/css/bootstrap.css',
+    'assets/css/*.css',
     'assets/*.scss',
     'assets/**/*.scss',
     '!app/node_modules/**'

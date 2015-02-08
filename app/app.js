@@ -3,6 +3,7 @@ var gabblr = angular.module('gabblr', ['satellizer', 'ngAnimate', 'ui.bootstrap'
 gabblr.controller('MainCtrl', function ($scope, $auth, $state) {
 
     $scope.logout = function () {
+
         if (!$auth.isAuthenticated()) {
             return;
         }
@@ -11,4 +12,9 @@ gabblr.controller('MainCtrl', function ($scope, $auth, $state) {
                 console.log('logged out');
             });
     };
+
+    $scope.isAuthenticated = function() {
+        return $auth.isAuthenticated();
+    };
+
 });
