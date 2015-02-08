@@ -18,12 +18,6 @@ class CreateUsersTable extends Migration {
             $table->string('email');
             $table->string('password');
             $table->string('displayName');
-            $table->string('facebook');
-            $table->string('foursquare');
-            $table->string('github');
-            $table->string('google');
-            $table->string('linkedin');
-            $table->string('twitter');
             $table->timestamps();
         });
 	}

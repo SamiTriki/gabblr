@@ -23,11 +23,26 @@ gabblr.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/shared/login/login.html',
             controller: 'LoginCtrl'
         })
-        .state('timeline', {
-            url: '/timeline',
-            title: 'Gabblr Timeline',
-            templateUrl: 'app/shared/timeline/timeline.html',
-            controller: 'TimelineCtrl'
-        });
+        .state('profile', {
+            url: '/profile',
+            title: 'Gabblr Profile',
+            templateUrl: 'app/shared/profile/profile.html',
+            controller: 'ProfileCtrl',
+            resolve: {
+                authenticated: function($q, $location, $auth) {
+                var deferred = $q.defer();
+                if (!$auth.isAuthenticated()) {
+                    $location.path('/login');
+                } else {
+                    deferred.resolve();
+                }
+
+                return deferred.promise;
+                },
+                User: function(userManager) {
+                    return userManager.getUser();
+                }
+            }
+        })
 
 });
