@@ -23,8 +23,8 @@ gabblr.config(function ($stateProvider, $urlRouterProvider) {
             templateUrl: 'app/shared/login/login.html',
             controller: 'LoginCtrl'
         })
-        .state('profile', {
-            url: '/profile',
+        .state('me', {
+            url: '/me',
             title: 'Gabblr Profile',
             templateUrl: 'app/shared/profile/profile.html',
             controller: 'ProfileCtrl',
@@ -40,9 +40,11 @@ gabblr.config(function ($stateProvider, $urlRouterProvider) {
                 return deferred.promise;
                 },
                 User: function(userManager) {
-                    return userManager.getUser();
+                    return userManager.getUser().then(function(data){
+                        return data.data;
+                    });
                 }
             }
-        })
+        });
 
 });
