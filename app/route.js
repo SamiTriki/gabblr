@@ -48,7 +48,7 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
             }
         })
         .state('users', {
-            url: '/{id:int}',
+            url: '/users/:id',
             templateUrl: 'app/shared/users/user.html',
             controller: 'UserCtrl',
             resolve: {

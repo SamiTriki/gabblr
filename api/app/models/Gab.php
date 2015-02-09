@@ -1,6 +1,6 @@
 <?php
 
-class User extends Eloquent
+class Gab extends Eloquent
 {
     /**
      * The attributes excluded from the model's JSON form.
