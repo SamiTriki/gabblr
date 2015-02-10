@@ -24,8 +24,7 @@
                     <a ui-sref='home' class="navbar-brand"><i class="fa fa-edit"></i>Gabbler</a>
                     <li ng-if="!isAuthenticated()"><a ui-sref="signup">Signup</a></li>
                     <li ng-if="!isAuthenticated()"><a ui-sref="login">Login</a></li> 
-                    <li ng-if="isAuthenticated()"><a ui-sref="me">Profil</a></li>                   
-
+                    <li ng-if="isAuthenticated()"><a ui-sref="me">Profil</a></li>
                 </ul>
 
                 <ul ng-if="isAuthenticated()" class="nav navbar-nav navbar-right">

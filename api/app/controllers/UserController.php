@@ -2,8 +2,8 @@
 
 class UserController extends \BaseController {
 
-	public function getUser()
-	{
+    public function getUser()
+    {
         $token = explode(' ', Request::header('Authorization'))[1];
         $payloadObject = JWT::decode($token, Config::get('secrets.TOKEN_SECRET'));
         $payload = json_decode(json_encode($payloadObject), true);
@@ -11,10 +11,10 @@ class UserController extends \BaseController {
         $user = User::find($payload['sub']);
 
         return $user;
-	}
+    }
 
-	public function updateUser()
-	{
+    public function updateUser()
+    {
         $token = explode(' ', Request::header('Authorization'))[1];
         $payloadObject = JWT::decode($token, Config::get('secrets.TOKEN_SECRET'));
         $payload = json_decode(json_encode($payloadObject), true);
@@ -29,5 +29,21 @@ class UserController extends \BaseController {
         $token = $this->createToken($user);
 
         return Response::json(array('token' => $token));
-	}
+    }
+
+    public function getUserById($id)
+    {
+
+        $user = User::find($id);
+
+        if (!$user)
+        {
+            return Response::json(array('message' => 'User not found'), 404);
+        } else {
+
+            return $user;
+
+        }
+
+    }
 }

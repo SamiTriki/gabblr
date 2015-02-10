@@ -17,4 +17,4 @@ Route::put('me', array('before' => 'auth', 'uses' => 'UserController@updateUser'
 Route::post('auth/login', 'AuthController@login');
 Route::post('auth/signup', 'AuthController@signup');
 
-Route::get('users/{id}', 'UsersController@getUserById');
+Route::get('users/{id}', 'UserController@getUserById');

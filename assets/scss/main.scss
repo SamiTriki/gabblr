@@ -1,0 +1,9 @@
+@import "../../app/shared/home/home";
+
+body,html { height: 100%;}
+
+.page-view {
+    height: calc(100% - 50px);
+}
+
+.navbar {margin-bottom: 0px;}
