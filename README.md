@@ -9,6 +9,7 @@ Gabblr is a Twitter-like project for Supinfo International University
 Gabblr uses a number of open source projects to work properly:
 
 * [AngularJS] - HTML enhanced for web apps!
+* [Satellizer] - simple to use, end-to-end, token-based authentication module for AngularJS, by [Sahat]
 * [Twitter Bootstrap] - great UI boilerplate for modern web apps
 * [Gulp] - the streaming build system
 * [Laravel] - The PHP framework for web artisans 
@@ -32,3 +33,5 @@ MIT
 [AngularJS]:http://angularjs.org
 [Gulp]:http://gulpjs.com
 [Laravel]:http://laravel.com
+[Satellizer]:https://github.com/sahat/satellizer
+[Sahat]:https://github.com/sahat
