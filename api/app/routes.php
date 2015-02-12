@@ -18,3 +18,6 @@ Route::post('auth/login', 'AuthController@login');
 Route::post('auth/signup', 'AuthController@signup');
 
 Route::get('users/{id}', 'UserController@getUserById');
+
+Route::get('users/{id}/gabs', 'GabController@getGabs');
+Route::post('users/{id}/gabs/{content}', 'GabController@newGab');

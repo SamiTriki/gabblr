@@ -44,4 +44,9 @@ class User extends Eloquent
     {
       return $this->email;
     }
+
+    public function gabs()
+    {
+        return $this->hasMany('Gabs');
+    }
 }
