@@ -1,8 +1,8 @@
 # Gabblr
 
-Gabblr is a Twitter-like project for Supinfo International University
+Gabblr is a Twitter-like project build with [AngularJS]
 
-![Logo](https://photos-1.dropbox.com/t/2/AADh-aFBMlzR0J42HAtze9L4_k810MocMBy74x0FXaxM9w/12/29648342/png/1024x768/3/1423796400/0/2/gabbler.png/CNbLkQ4gASACIAMoASgC/eXMNjLVrCasNJN0jav6f8ih6s2OUbVk3FyhdVT19JzA)
+![Gabblr logo](http://triki.io/images/gabbler.png)
 
 ### Version
 0.0.1
@@ -17,7 +17,7 @@ Gabblr uses a number of open source projects to work properly:
 * [Gulp] - the streaming build system
 * [Laravel] - The PHP framework for web artisans 
 
-/!\ the back end is located in the "api" folder and is made with laravel, however, the rest of my team will provide a C# based api, the laravel part is just for me <3
+/!\ the back end is located in the "api" folder and is made with laravel. The back end and front don't depend on one another
 
 ### Todo's
 
