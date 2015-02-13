@@ -6,9 +6,16 @@ app.factory('gabsService', function (profileService, $http) {
 
     $scope.submit = function (gab) {
         return profileService.getUser()
-            .then(function (data) { return data.data.id;})
+            .then(function (data) { return data.data.id; })
             .then(function (id) {
-                $http.post('/api/users/'+id+'/gabs', gab);
+                $http.post('/api/users/' + id + '/gabs', gab);
+            });
+    };
+
+    $scope.getAllGabs = function () {
+        return $http.get('/api/gabs')
+            .then(function (data) {
+                $scope.gabs = data.data;
             });
     };
 

@@ -58,6 +58,23 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
                     });
                 }
             }
+        })
+        .state('timeline', {
+            url: '/timeline',
+            templateUrl: 'app/shared/timeline/timeline.html',
+            controller: 'TimelineCtrl',
+            resolve: {
+                authenticated: function ($q, $location, $auth) {
+                    var deferred = $q.defer();
+                    if (!$auth.isAuthenticated()) {
+                        $location.path('/login');
+                    } else {
+                        deferred.resolve();
+                    }
+
+                    return deferred.promise;
+                }
+            }
         });
 
 });

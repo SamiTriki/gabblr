@@ -1,0 +1,10 @@
+<div class="container">
+    <h1>Timeline</h1>
+    <textarea ng-model="newgab.content" cols="30" rows="10"></textarea>
+    <button ng-click="gabsService.submit(newgab)">gab !</button>
+    <ul ng-init="gabsService.getAllGabs()">
+        <li ng-repeat="gab in gabs">
+            <p><span>{{gab.user_id}} </span>{{gab.content}}</p>
+        </li>
+    </ul>
+</div>
