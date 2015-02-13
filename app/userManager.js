@@ -1,6 +1,6 @@
 var app = angular.module('gabblr');
 
-app.factory('profileService', function ($http) {
+app.factory('userManager', function ($http) {
 
     var $scope = {};
 

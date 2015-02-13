@@ -72,15 +72,15 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
                 authenticated: function ($q, $location, $auth) {
                     var deferred = $q.defer();
                     if (!$auth.isAuthenticated()) {
-                        $location.path('/login');
+                        $location.path('/');
                     } else {
                         deferred.resolve();
                     }
 
                     return deferred.promise;
                 },
-                Me: function (profileService) {
-                    return profileService.getUser().then(function (data) {
+                Me: function (userManager) {
+                    return userManager.getUser().then(function (data) {
                         return data.data;
                     });
                 }
