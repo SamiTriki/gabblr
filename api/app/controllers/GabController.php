@@ -2,10 +2,10 @@
 
 class GabController extends \BaseController {
 
-    public function newGab($id, $content)
+    public function newGab($id)
     {
         $input['id'] = $id;
-        $input['content'] = $content;
+        $input['content'] = Input::get('content');
 
         $rules = array(
                        'id' => 'required',
@@ -21,7 +21,7 @@ class GabController extends \BaseController {
         {
             $gab = new Gab;
             $gab->user_id = $id;
-            $gab->content = $content;
+            $gab->content = Input::get('content');
             $gab->save();
 
             return Response::json(array('message' => 'gab created sucessfully'), 200);

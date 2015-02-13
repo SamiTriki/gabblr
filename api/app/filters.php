@@ -43,11 +43,24 @@ Route::filter('auth', function()
     $token = explode(' ', Request::header('Authorization'))[1];
     $payloadObject = JWT::decode($token, Config::get('secrets.TOKEN_SECRET'));
     $payload = json_decode(json_encode($payloadObject), true);
-
     if ($payload['exp'] < time())
     {
         Response::json(array('message' => 'Token has expired'));
     }
+});
+
+Route::filter('loggedUser', function($route) {
+    
+    $token = explode(' ', Request::header('Authorization'))[1];
+    $payloadObject = JWT::decode($token, Config::get('secrets.TOKEN_SECRET'));
+    $payload = json_decode(json_encode($payloadObject), true);
+    $callId = $route->getParameter('id');
+    $user = User::find($payload['sub']);
+
+    if ($callId != $user->id) {
+        return Response::json(array('message' => 'You can\'t execute this action on another\'s account'), 401);
+    }
+
 });
 
 
