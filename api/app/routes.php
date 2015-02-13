@@ -21,3 +21,5 @@ Route::get('users/{id}', 'UserController@getUserById');
 
 Route::get('users/{id}/gabs', 'GabController@getGabs');
 Route::post('users/{id}/gabs', array('before' => 'auth|loggedUser', 'uses' => 'GabController@newGab'));
+
+Route::get('gabs', array('before' => 'auth', 'uses' => 'GabController@allGabs'));
