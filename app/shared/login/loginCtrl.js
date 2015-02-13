@@ -7,7 +7,7 @@ gabblr.controller('LoginCtrl', function ($scope, $auth, $state, $http) {
     $scope.logIn = function (user) {
         $auth.login(user)
             .then(function (response) {
-                console.log(response);
+                $state.go('/');
             });
     };
 

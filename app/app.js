@@ -9,7 +9,7 @@ gabblr.controller('MainCtrl', function ($scope, $auth, $state) {
         }
         $auth.logout()
             .then(function () {
-                console.log('logged out');
+                $stage.go('/');
             });
     };
 

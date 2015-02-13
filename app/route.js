@@ -7,22 +7,61 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
 
     $stateProvider
         .state('home', {
-            url: '/',
+            url: '/home',
             title: 'Home',
             templateUrl: 'app/shared/home/home.html',
-            controller: 'HomeCtrl'
+            controller: 'HomeCtrl',
+            resolve: {
+                loggedOut: function ($q, $location, $auth) {
+                    var deferred = $q.defer();
+
+                    if ($auth.isAuthenticated()) {
+                        $location.path('/');
+                    } else {
+                        deferred.resolve();
+                    }
+                    return deferred.promise;
+                }
+            }
         })
+
         .state('signup', {
             url: '/signup',
             title: 'Sign Up',
             templateUrl: 'app/shared/signup/signup.html',
-            controller: 'SignupCtrl'
+            controller: 'SignupCtrl',
+            resolve: {
+                loggedOut: function ($q, $location, $auth) {
+                    var deferred = $q.defer();
+
+                    if ($auth.isAuthenticated()) {
+                        $location.path('/timeline');
+                    } else {
+                        deferred.resolve();
+                    }
+                    return deferred.promise;
+                }
+            }
         })
+
         .state('login', {
             url: '/login',
             title: 'login',
             templateUrl: 'app/shared/login/login.html',
-            controller: 'LoginCtrl'
+            controller: 'LoginCtrl',
+            resolve: {
+                loggedOut: function ($q, $location, $auth) {
+                    var deferred = $q.defer();
+
+                    if ($auth.isAuthenticated()) {
+                        $location.path('/timeline');
+                    } else {
+                        deferred.resolve();
+                    }
+                    return deferred.promise;
+                }
+            }
+
         })
         .state('me', {
             url: '/me',
@@ -60,14 +99,14 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
             }
         })
         .state('timeline', {
-            url: '/timeline',
+            url: '/',
             templateUrl: 'app/shared/timeline/timeline.html',
             controller: 'TimelineCtrl',
             resolve: {
                 authenticated: function ($q, $location, $auth) {
                     var deferred = $q.defer();
                     if (!$auth.isAuthenticated()) {
-                        $location.path('/login');
+                        $location.path('/home');
                     } else {
                         deferred.resolve();
                     }
