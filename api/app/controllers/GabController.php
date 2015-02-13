@@ -39,4 +39,11 @@ class GabController extends \BaseController {
 
         } else { return $gab; }
     }
+
+    public function allGabs()
+    {
+        $gab = Gab::all();
+
+        return $gab;
+    }
 }
