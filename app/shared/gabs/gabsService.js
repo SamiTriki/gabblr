@@ -15,7 +15,7 @@ app.factory('gabsService', function (profileService, $http) {
     $scope.getAllGabs = function () {
         return $http.get('/api/gabs')
             .then(function (data) {
-                $scope.gabs = data.data;
+                return data.data;
             });
     };
 
