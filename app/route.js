@@ -54,7 +54,7 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
                     var deferred = $q.defer();
 
                     if ($auth.isAuthenticated()) {
-                        $location.path('/timeline');
+                        $location.path('/');
                     } else {
                         deferred.resolve();
                     }
@@ -72,16 +72,16 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
                 authenticated: function ($q, $location, $auth) {
                     var deferred = $q.defer();
                     if (!$auth.isAuthenticated()) {
-                        $location.path('/');
+                        $location.path('/home');
                     } else {
                         deferred.resolve();
                     }
 
                     return deferred.promise;
                 },
-                Me: function (userManager) {
+                Me: function (userManager, authenticated) {
                     return userManager.getUser().then(function (data) {
-                        return data.data;
+                        return data;
                     });
                 }
             }

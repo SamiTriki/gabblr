@@ -6,7 +6,7 @@ app.factory('gabsService', function (userManager, $http) {
 
     $scope.submit = function (gab) {
         return userManager.getUser()
-            .then(function (data) { return data.data.id; })
+            .then(function (data) { return data.id; })
             .then(function (id) {
                 $http.post('/api/users/' + id + '/gabs', gab);
             });
