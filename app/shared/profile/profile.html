@@ -6,16 +6,22 @@
         <div class="col-xs-12 col-sm-8 col-sm-offset-2">
             <form name="myData">
                 <input type="text" class="form-control" ng-model="me.displayName">
+                <div class="col-xs-4">
+                    <img  class="img-responsive" ng-if="me.profile_picture" ng-src="{{me.profile_picture}}" alt="">
+                    <label for="">profile picture url</label>
+                    <input type="text" class="form-control" ng-model="me.profile_picture">
+                </div>
+                <div class="col-xs-4">
 
-                <img ng-if="me.profile_picture" ng-src="{{me.profile_picture}}" alt="">
-                <label for="">profile picture url</label>
-                <input type="text" class="form-control" ng-model="me.profile_picture">
+                   <img class="img-responsive" ng-if="me.background_picture" ng-src="{{me.background_picture}}" alt="">
 
-                <img ng-if="me.background_picture" ng-src="{{me.background_picture}}" alt="">
-                <label for="">change background picture url</label>
-                <input type="text" class="form-control" ng-model="me.background_picture">
+                    <label for="">change background picture url</label>
+                    <input type="text" class="form-control" ng-model="me.background_picture">
+                </div>
+                <div class="col-xs-12">
+                    <button class="btn btn-primary" ng-click="updateMe(me)">Update</button>
+                </div>
 
-                <button class="btn btn-primary" ng-click="updateMe(me)">Update</button>
             </form>
         </div>
     </div>

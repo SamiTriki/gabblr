@@ -1,10 +1,18 @@
 <div class="container" ng-init="getTimeLine()">
-    <h1>Timeline</h1>
-    <textarea ng-model="newgab.content" cols="30" rows="10"></textarea>
-    <button ng-click="submit(newgab)">gab !</button>
-    <ul>
-        <li  ng-repeat="gab in gabs">
-            <p><span>{{gab.user_id}} </span>{{gab.content}}</p>
-        </li>
-    </ul>
+    <div class="col-xs-4">
+        <h2>Timeline</h2>
+        <img class="img-responsive" ng-src="{{me.profile_picture}}">
+    </div>
+    <div class="col-xs-8">
+        <h2>&nbsp;</h2>
+
+        <p><strong>Post something new</strong></p>
+        <textarea ng-model="newgab.content" cols="30" rows="4" max="255"></textarea>
+        <button ng-click="submit(newgab)">gab !</button>
+        <ul>
+            <li  ng-repeat="gab in gabs">
+                <p><span>{{gab.user_id}} </span>{{gab.content}}</p>
+            </li>
+        </ul>
+    </div>
 </div>

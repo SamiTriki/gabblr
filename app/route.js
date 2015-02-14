@@ -112,6 +112,11 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
                     }
 
                     return deferred.promise;
+                },
+                Me: function (userManager, authenticated) {
+                    return userManager.getUser().then(function (data) {
+                        return data;
+                    });
                 }
             }
         });
