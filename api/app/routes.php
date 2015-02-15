@@ -11,15 +11,15 @@
 |
 */
 
-Route::get('me', array('before' => 'auth', 'uses' => 'UserController@getUser'));
-Route::put('me', array('before' => 'auth', 'uses' => 'UserController@updateUser'));
+Route::get('me', array('before' => 'auth', 'uses' => 'UserController@getAuth'));
+Route::put('me', array('before' => 'auth', 'uses' => 'UserController@update'));
 
 Route::post('auth/login', 'AuthController@login');
 Route::post('auth/signup', 'AuthController@signup');
 
-Route::get('users/{id}', 'UserController@getUserById');
+Route::get('users/{id}', 'UserController@show');
 
-Route::get('users/{id}/gabs', 'GabController@getGabs');
-Route::post('users/{id}/gabs', array('before' => 'auth|loggedUser', 'uses' => 'GabController@newGab'));
+Route::get('users/{id}/gabs', 'GabController@show');
+Route::post('users/{id}/gabs', array('before' => 'auth|loggedUser', 'uses' => 'GabController@store'));
 
-Route::get('gabs', array('before' => 'auth', 'uses' => 'GabController@allGabs'));
+Route::get('gabs', array('before' => 'auth', 'uses' => 'GabController@showAll'));

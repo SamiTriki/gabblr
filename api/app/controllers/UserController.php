@@ -2,7 +2,7 @@
 
 class UserController extends \BaseController {
 
-    public function getUser()
+    public function getAuth()
     {
         $token = explode(' ', Request::header('Authorization'))[1];
         $payloadObject = JWT::decode($token, Config::get('secrets.TOKEN_SECRET'));
@@ -13,7 +13,7 @@ class UserController extends \BaseController {
         return $user;
     }
 
-    public function updateUser()
+    public function update()
     {
         $token = explode(' ', Request::header('Authorization'))[1];
         $payloadObject = JWT::decode($token, Config::get('secrets.TOKEN_SECRET'));
@@ -31,7 +31,7 @@ class UserController extends \BaseController {
         return Response::json(array('token' => $token));
     }
 
-    public function getUserById($id)
+    public function show($id)
     {
 
         $user = User::find($id);

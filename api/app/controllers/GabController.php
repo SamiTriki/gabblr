@@ -2,7 +2,7 @@
 
 class GabController extends \BaseController {
 
-    public function newGab($id)
+    public function store($id)
     {
         $input['id'] = $id;
         $input['content'] = Input::get('content');
@@ -29,7 +29,7 @@ class GabController extends \BaseController {
         }
     }
 
-    public function getGabs($id)
+    public function show($id)
     {
         $gab = Gab::where('user_id','=',$id)->firstOrFail();
 
@@ -40,7 +40,7 @@ class GabController extends \BaseController {
         } else { return $gab; }
     }
 
-    public function allGabs()
+    public function showAll()
     {
         $gab = Gab::all();
 
