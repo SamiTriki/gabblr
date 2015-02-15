@@ -1,6 +1,10 @@
-<div class="container">
-    <h1>timeline</h1>
-    <p>{{user.displayName}}</p>
+<div class="container" ng-init="getGabs()">
+    <h2>{{user.displayName}}</h2>
     <p>{{user.email}}</p>
     <img class="thumbnail "ng-src="{{user.profile_picture}}" alt="">
+    <ul>
+        <li ng-repeat="gab in gabs">
+            <p>{{gab.content}}</p>
+        </li>
+    </ul>
 </div>

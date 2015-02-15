@@ -1,18 +1,18 @@
-gabblr = angular.module('gabblr');
+var gabblr = angular.module('gabblr');
 
-gabblr.controller('TimelineCtrl', function($scope, gabsService, Me) {
+gabblr.controller('TimelineCtrl', function ($scope, gabsService, Me) {
 
-    $scope.getTimeLine = function() {
+    $scope.getTimeLine = function () {
         gabsService.getAll()
-            .then( function(data) {
+            .then(function (data) {
                 $scope.gabs = data;
             });
     };
 
 
-    $scope.submit = function(newGab) {
+    $scope.submit = function (newGab) {
         gabsService.submit(newGab)
-            .then( function() {
+            .then(function () {
                 $scope.getTimeLine();
             });
     };

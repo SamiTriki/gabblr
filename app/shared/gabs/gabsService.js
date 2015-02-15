@@ -19,6 +19,13 @@ app.factory('gabsService', function (userManager, $http) {
             });
     };
 
+    $scope.user = function (id) {
+        return $http.get('/api/users/' + id + '/gabs')
+            .then(function (data) {
+                return data.data;
+            });
+    };
+
     return $scope;
 });
 
