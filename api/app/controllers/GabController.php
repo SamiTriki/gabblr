@@ -31,13 +31,20 @@ class GabController extends \BaseController {
 
     public function show($id)
     {
-        $gab = Gab::where('user_id','=',$id)->firstOrFail();
+        $gabs = array();
+        
+        $gab = Gab::where('user_id','=',$id)->get();
 
-        if (!$gab)
-        {
-            return Response::json(array('message' => 'gab not found'), 404);
+        if (!$gab) {
+            return Response::json(array('message' => 'gabs not found'), 404);
 
-        } else { return $gab; }
+        } else {
+            foreach ($gab as $gab) {
+                $gabs[] = $gab;
+            }
+        }
+
+        return $gabs;
     }
 
     public function showAll()
