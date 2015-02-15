@@ -4,7 +4,7 @@ gabblr.factory('userService', function ($http) {
 
     var $scope = {};
 
-    $scope.getUserById = function (id) {
+    $scope.getById = function (id) {
 
         return $http.get('/api/users/'+id);
     };

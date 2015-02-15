@@ -20,7 +20,7 @@ gabblr.controller('MainCtrl', function ($scope, $auth, $state, userManager) {
     // if ($auth.isAuthenticated()) {
     //     debugger;
     //     console.log('auth');
-    //     userManager.getUser()
+    //     userManager.get()
     //         .success( function(data) {
     //             $scope.User = data.data;
     //         })

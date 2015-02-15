@@ -3,7 +3,7 @@ gabblr = angular.module('gabblr');
 gabblr.controller('TimelineCtrl', function($scope, gabsService, Me) {
 
     $scope.getTimeLine = function() {
-        gabsService.getAllGabs()
+        gabsService.getAll()
             .then( function(data) {
                 $scope.gabs = data;
             });

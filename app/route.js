@@ -80,7 +80,7 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
                     return deferred.promise;
                 },
                 Me: function (userManager, authenticated) {
-                    return userManager.getUser().then(function (data) {
+                    return userManager.get().then(function (data) {
                         return data;
                     });
                 }
@@ -92,7 +92,7 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
             controller: 'UserCtrl',
             resolve: {
                 user: function (userService, $stateParams) {
-                    return userService.getUserById($stateParams.id).then(function (data) {
+                    return userService.getById($stateParams.id).then(function (data) {
                         return data.data;
                     });
                 }
@@ -114,7 +114,7 @@ gabblr.config(function ($stateProvider, $urlRouterProvider, $locationProvider, $
                     return deferred.promise;
                 },
                 Me: function (userManager, authenticated) {
-                    return userManager.getUser().then(function (data) {
+                    return userManager.get().then(function (data) {
                         return data;
                     });
                 }
