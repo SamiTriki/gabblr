@@ -23,4 +23,9 @@ Route::get('users/{id}/gabs', 'GabController@user');
 Route::get('gabs/{id}', 'Cabcontroller@show');
 Route::post('users/{id}/gabs', array('before' => 'auth|loggedUser', 'uses' => 'GabController@store'));
 
+
+Route::post('gabs/{gab_id}/likes/{id}', array('before' => 'auth|loggedUser', 'uses' => 'LikeController@store'));
+Route::delete('gabs/{gab_id}/likes/{id}', array('before' => 'auth|loggedUser', 'uses' => 'LikeController@destroy'));
+
+
 Route::get('gabs', array('before' => 'auth', 'uses' => 'GabController@showAll'));
