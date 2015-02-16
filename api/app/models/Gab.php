@@ -7,4 +7,9 @@ class Gab extends Eloquent
         return $this->belongsTo('User');
     }
 
+    public function likes()
+    {
+        return $this->hasMany('Like');
+    }
+
 }

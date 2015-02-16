@@ -29,7 +29,7 @@ class GabController extends \BaseController {
         }
     }
 
-    public function show($id)
+    public function user($id)
     {
         $gabs = array();
         
@@ -45,6 +45,22 @@ class GabController extends \BaseController {
         }
 
         return $gabs;
+    }
+
+    public function show($id)
+    {
+
+        $user = User::find($id);
+
+        if (!$user)
+        {
+            return Response::json(array('message' => 'User not found'), 404);
+        } else {
+
+            return $user;
+
+        }
+
     }
 
     public function showAll()

@@ -19,7 +19,8 @@ Route::post('auth/signup', 'AuthController@signup');
 
 Route::get('users/{id}', 'UserController@show');
 
-Route::get('users/{id}/gabs', 'GabController@show');
+Route::get('users/{id}/gabs', 'GabController@user');
+Route::get('gabs/{id}', 'Cabcontroller@show');
 Route::post('users/{id}/gabs', array('before' => 'auth|loggedUser', 'uses' => 'GabController@store'));
 
 Route::get('gabs', array('before' => 'auth', 'uses' => 'GabController@showAll'));
